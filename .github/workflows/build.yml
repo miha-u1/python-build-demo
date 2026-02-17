@@ -29,4 +29,11 @@ jobs:
         run: PYTHONPATH=. python -m pytest -v
 
       - name: Run app
-        run: python main.py
+        run: |
+         python main.py
+
+      - name: Archive log test
+        uses: actions/upload-artifact@v4
+        with: 
+          name: logs
+          path: /pytest.log
