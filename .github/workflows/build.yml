@@ -26,7 +26,10 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run tests
-        run: PYTHONPATH=. python -m pytest -v
+        run: |
+         PYTHONPATH=. python -m pytest -v
+         python -m pytest -v | tee pytest.log
+
 
       - name: Run app
         run: |
