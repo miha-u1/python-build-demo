@@ -27,9 +27,7 @@ jobs:
 
       - name: Run tests
         run: |
-         PYTHONPATH=. python -m pytest -v
-         python -m pytest -v | tee pytest.log
-
+         PYTHONPATH=. python -m pytest -v | tee pytest.log
 
       - name: Run app
         run: |
@@ -39,4 +37,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with: 
           name: logs
-          path: /pytest.log
+          path: PYTHONPATH/pytest.log
